@@ -27,3 +27,14 @@ C:\Users\Michael Cavicchioli\Desktop\Esercizio\ProgettoCondiviso\EsercizioC#\pro
 C:\Users\Michael Cavicchioli\Desktop\Esercizio\ProgettoCondiviso\EsercizioC#\progetto\progetto\obj\Debug\progetto.csproj.CoreCompileInputs.cache
 C:\Users\Michael Cavicchioli\Desktop\Esercizio\ProgettoCondiviso\EsercizioC#\progetto\progetto\obj\Debug\progetto.exe
 C:\Users\Michael Cavicchioli\Desktop\Esercizio\ProgettoCondiviso\EsercizioC#\progetto\progetto\obj\Debug\progetto.pdb
+C:\Users\cosim\Desktop\C#\ProgettoCondiviso\EsercizioC#\progetto\progetto\bin\Debug\progetto.exe.config
+C:\Users\cosim\Desktop\C#\ProgettoCondiviso\EsercizioC#\progetto\progetto\bin\Debug\progetto.exe
+C:\Users\cosim\Desktop\C#\ProgettoCondiviso\EsercizioC#\progetto\progetto\bin\Debug\progetto.pdb
+C:\Users\cosim\Desktop\C#\ProgettoCondiviso\EsercizioC#\progetto\progetto\obj\Debug\progetto.csprojAssemblyReference.cache
+C:\Users\cosim\Desktop\C#\ProgettoCondiviso\EsercizioC#\progetto\progetto\obj\Debug\progetto.Form1.resources
+C:\Users\cosim\Desktop\C#\ProgettoCondiviso\EsercizioC#\progetto\progetto\obj\Debug\progetto.Properties.Resources.resources
+C:\Users\cosim\Desktop\C#\ProgettoCondiviso\EsercizioC#\progetto\progetto\obj\Debug\progetto.SplashForm.resources
+C:\Users\cosim\Desktop\C#\ProgettoCondiviso\EsercizioC#\progetto\progetto\obj\Debug\progetto.csproj.GenerateResource.cache
+C:\Users\cosim\Desktop\C#\ProgettoCondiviso\EsercizioC#\progetto\progetto\obj\Debug\progetto.csproj.CoreCompileInputs.cache
+C:\Users\cosim\Desktop\C#\ProgettoCondiviso\EsercizioC#\progetto\progetto\obj\Debug\progetto.exe
+C:\Users\cosim\Desktop\C#\ProgettoCondiviso\EsercizioC#\progetto\progetto\obj\Debug\progetto.pdb

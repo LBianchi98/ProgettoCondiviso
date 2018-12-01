@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -132,6 +133,34 @@ namespace progetto
         {
             lstbx.DataSource = null;
             numeri.Clear();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //Viene mostrato in background il form principale come richiesto dall'esercizio
+            Show();
+            bool done = false;
+            //Un thread pool è un gestore di thread 
+            //utilizzato per ottimizzare e semplificare l'utilizzo dei thread.
+            //QueueUserWorkItem accoda un metodo da eseguire. Il metodo
+            //viene eseguito quando un thread del pool di thread diventa disponibile.
+            ThreadPool.QueueUserWorkItem((x) =>
+            {
+                using (var splashform = new SplashForm())
+                {
+                    //Viene mostrato il form responsabile dello Splash Screen
+                    splashform.Show();
+                    while (!done)
+                    {
+                        Application.DoEvents();
+                    }
+                    splashform.Close();
+                }
+            });
+            Thread.Sleep(3000);
+            done = true;
+            //Attiva il form principale dopo che il form dello splash screen è stato chiuso
+            Activate();
         }
     }
 }
