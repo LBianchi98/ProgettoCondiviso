@@ -19,25 +19,14 @@ namespace progetto
         public Form1()
         {
             InitializeComponent();
+            
         }
 
 
         // La funzione add() controlla se i numeri nella lista sono minori di dieci 
         // e li aggiunge nella listbox prendendoli dalla textbox
         // altrimenti disabilita il bottone btnAdd.
-        public void add()
-        {
-            try
-            {
-                if (numeri.Count() < 10)
-                    numeri.Add(Convert.ToInt32(txtB.Text));
-                else
-                    btnAdd.Enabled = false;
-            }
-            catch (FormatException e) {
-                MessageBox.Show("inserire un numero valido");
-            }
-        }
+
 
         public void SalvaSuFile(List<int> numeri)
         {
@@ -88,53 +77,6 @@ namespace progetto
             return n;
         }
 
-        private void btnSalva_Click(object sender, EventArgs e)
-        {
-            if (lstbx.Items.Count == 0)
-            {
-                MessageBox.Show("Impossibile salvare poichè la lista è vuota.");
-            }
-            else
-            {
-                SalvaSuFile(numeri.ToList<int>());
-            }
-        }
-
-        private void btnCarica_Click(object sender, EventArgs e)
-        {   
-            numeri = CaricaDaFile();
-            numeri.Sort();
-            lstbx.DataSource = numeri;
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            if(txtB.Text != "")
-            {
-                add();
-                numeri.Sort();
-                lstbx.DataSource = null;
-                lstbx.DataSource = numeri;
-                txtB.Text = "";
-            }
-            else
-            {
-                MessageBox.Show("Impossibile aggiungere poichè non è stato inserito alcun elemento.");
-            }
-        }
-
-        private void lstbx_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        // La funzione btnClear_Click() svuota la listbox eliminando tutti i numeri e la lista numeri pure viene svuotata.
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            lstbx.DataSource = null;
-            numeri.Clear();
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             //Viene mostrato in background il form principale come richiesto dall'esercizio
@@ -161,6 +103,72 @@ namespace progetto
             done = true;
             //Attiva il form principale dopo che il form dello splash screen è stato chiuso
             Activate();
+        }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Clear();
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Text files (.txt)|*.txt";
+            ofd.Title = "Open a file...";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                System.IO.StreamReader sr = new System.IO.StreamReader(ofd.FileName);
+                richTextBox1.Text = sr.ReadToEnd();
+                sr.Close();
+            }
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog svf = new SaveFileDialog();
+            svf.Filter = "Text files (.txt)|*.txt";
+            svf.Title = "Save file...";
+            if (svf.ShowDialog() == DialogResult.OK)
+            {
+                System.IO.StreamWriter sw = new System.IO.StreamWriter(svf.FileName);
+                sw.Write(richTextBox1.Text);
+                sw.Close();
+            }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void undoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Undo();
+        }
+
+        private void redoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Redo();
+        }
+
+        private void cutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Cut();
+        }
+
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Copy();
+        }
+
+        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Paste();
+        }
+
+        private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.SelectAll();
         }
     }
 }
